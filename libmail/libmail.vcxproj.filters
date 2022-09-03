@@ -1,0 +1,73 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="dllmain.cpp" />
+    <ClCompile Include="libmaildll.cpp" />
+    <ClCompile Include="pch.cpp" />
+    <ClCompile Include="SmtpWrapper\SmtpWrapper.cpp">
+      <Filter>SmtpWrapper</Filter>
+    </ClCompile>
+    <ClCompile Include="Common\Common.cpp">
+      <Filter>Common</Filter>
+    </ClCompile>
+    <ClCompile Include="ErrorCode\ErrorCodeMap.cpp">
+      <Filter>ErrorCode</Filter>
+    </ClCompile>
+    <ClCompile Include="MimeMessage\MimeMessage.cpp">
+      <Filter>MimeMessage</Filter>
+    </ClCompile>
+    <ClCompile Include="Log\SmtpLog.cpp">
+      <Filter>SmtpLog</Filter>
+    </ClCompile>
+    <ClCompile Include="LibcurlWrapper\LibcurlWrapper.cpp">
+      <Filter>LibcurlWrapper</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="pch.h" />
+    <ClInclude Include="SmtpWrapper\SmtpWrapper.h">
+      <Filter>SmtpWrapper</Filter>
+    </ClInclude>
+    <ClInclude Include="Common\Common.h">
+      <Filter>Common</Filter>
+    </ClInclude>
+    <ClInclude Include="ErrorCode\ErrorCodeMap.h">
+      <Filter>ErrorCode</Filter>
+    </ClInclude>
+    <ClInclude Include="MimeMessage\IMimeMessage.h">
+      <Filter>MimeMessage</Filter>
+    </ClInclude>
+    <ClInclude Include="MimeMessage\MimeMessage.h">
+      <Filter>MimeMessage</Filter>
+    </ClInclude>
+    <ClInclude Include="Log\SmtpLog.h">
+      <Filter>SmtpLog</Filter>
+    </ClInclude>
+    <ClInclude Include="LibcurlWrapper\LibcurlWrapper.h">
+      <Filter>LibcurlWrapper</Filter>
+    </ClInclude>
+    <ClInclude Include="SmtpWrapper\ISmtpWrapper.h">
+      <Filter>SmtpWrapper</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="SmtpWrapper">
+      <UniqueIdentifier>{da191baf-16db-4fa6-af91-4107baac79d4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Common">
+      <UniqueIdentifier>{12082476-e077-4692-b71b-de7cdd6ea873}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ErrorCode">
+      <UniqueIdentifier>{473ab4c7-70ea-4df2-a728-ab5d4c5e2263}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="MimeMessage">
+      <UniqueIdentifier>{6501b575-f594-4e48-9670-83303f017e2b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="SmtpLog">
+      <UniqueIdentifier>{2a75bbd3-d950-489d-955d-1d98741222dc}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="LibcurlWrapper">
+      <UniqueIdentifier>{4ab78f83-53f7-4735-9d1e-8440b6c6e640}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>
