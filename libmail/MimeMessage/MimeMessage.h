@@ -11,7 +11,6 @@ namespace libmailNS
 
 	public:
 		void Reset() override;
-		void Release() override;
 		static IMimeMessage* CreateMessageInstance();
 
 	public:
@@ -57,9 +56,13 @@ namespace libmailNS
 		void SetTransferEncoding(unsigned int nEncodeType = 0);
 		int GetTransferEncoding() const override final;
 
-		void SetMessageBody(const char* Body, unsigned int nBodyType/*0:PlainText 1:HTML*/) override final;
+		void SetMessageHtmlBody(const char* Body) override final;
+		const char* GetMessageHtmlBody() const override final;
+
+		void SetMessagePlainBody(const char* Body) override final;
+		const char* GetMessagePlainBody() const override final;
+
 		void SetMessageBodyFromFile(const char* FileName, int iTextType) override final;
-		const char* GetMessageBody(int iTextType/*0:PlainText 1:HTML*/) const override final;
 
 	private:
 		bool													m_bhtml;

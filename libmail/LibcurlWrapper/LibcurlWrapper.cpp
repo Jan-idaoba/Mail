@@ -270,7 +270,7 @@ namespace libmailNS
 			auto pMimeMessage = pSmtpClient->GetMimeMessage();
 			if (pMimeMessage) {
 				// HTML message
-				strHTMLBody = pMimeMessage->GetMessageBody(1);
+				//strHTMLBody = pMimeMessage->GetMessageBody(1);
 				int iEncodingType = pMimeMessage->GetTransferEncoding();
 				if (!strHTMLBody.empty()) {
 					if (iEncodingType == 0) {
@@ -292,7 +292,7 @@ namespace libmailNS
 				}
 
 				// plain text message
-				strPlainTextBody = pMimeMessage->GetMessageBody();
+				//strPlainTextBody = pMimeMessage->GetMessageBody();
 				if (!strPlainTextBody.empty()) {
 					part = curl_mime_addpart(pAlternative);
 					if (iEncodingType == 0) {
@@ -633,7 +633,7 @@ namespace libmailNS
 		if (pSmtpClient) {
 			auto pMimeMessage = pSmtpClient->GetMimeMessage();
 			if (pMimeMessage) {
-				strHTMLBody = pMimeMessage->GetMessageBody(1);
+				//strHTMLBody = pMimeMessage->GetMessageBody(1);
 				if (!pMimeMessage->GetMessageBodyFormat() || strHTMLBody.empty()) {
 					return;
 				}
@@ -874,7 +874,7 @@ namespace libmailNS
 			return;
 		}
 
-		strBody.append(pMimeMessage->GetMessageBody());
+		//strBody.append(pMimeMessage->GetMessageBody());
 		strBody.append(szEnter);
 		strBody.append(szEnter);
 	}
@@ -961,60 +961,60 @@ namespace libmailNS
 		std::map<int, std::pair<bool, std::string>> _map;
 
 		if (pMimeMessage) {
-			std::string strBody = pMimeMessage->GetMessageBody(1);
-			if (!strBody.empty()) {
-				// 拆分HTML.
-				while (strBody.find('>', iBegin) != std::string::npos) {
-					std::pair<bool, std::string> _pair;
-					_pair.first = false;
-					iPos = strBody.find('>', iBegin);
-					strbuffer.assign(strBody, iBegin, iPos - iBegin + 1);
-					int iLeftPos = strBody.find('<', iBegin);
-					if (iLeftPos != std::string::npos && iLeftPos < iPos) {
-						if (tolower(strBody[iLeftPos + 1]) == 'i'
-							&& tolower(strBody[iLeftPos + 2]) == 'm'
-							&& tolower(strBody[iLeftPos + 3]) == 'g') {
-							int iLeft = strBody.find('"', iLeftPos);
-							int iRight = strBody.find('"', iLeft + 1);
-							if (iLeft != std::string::npos
-								&& iRight != std::string::npos
-								&& iLeft < iPos && iRight < iPos) {
-								_vec.push_back(strBody.substr(iLeft + 1, iRight - iLeft - 1));
-								_pair.first = true;
-							}
-						}
-					}
-					_pair.second = strbuffer;
-					_map[iCount++] = _pair;
-					iBegin = iPos + 1;
-				}
+			//std::string strBody = pMimeMessage->GetMessageBody(1);
+			//if (!strBody.empty()) {
+			//	// 拆分HTML.
+			//	while (strBody.find('>', iBegin) != std::string::npos) {
+			//		std::pair<bool, std::string> _pair;
+			//		_pair.first = false;
+			//		iPos = strBody.find('>', iBegin);
+			//		strbuffer.assign(strBody, iBegin, iPos - iBegin + 1);
+			//		int iLeftPos = strBody.find('<', iBegin);
+			//		if (iLeftPos != std::string::npos && iLeftPos < iPos) {
+			//			if (tolower(strBody[iLeftPos + 1]) == 'i'
+			//				&& tolower(strBody[iLeftPos + 2]) == 'm'
+			//				&& tolower(strBody[iLeftPos + 3]) == 'g') {
+			//				int iLeft = strBody.find('"', iLeftPos);
+			//				int iRight = strBody.find('"', iLeft + 1);
+			//				if (iLeft != std::string::npos
+			//					&& iRight != std::string::npos
+			//					&& iLeft < iPos && iRight < iPos) {
+			//					_vec.push_back(strBody.substr(iLeft + 1, iRight - iLeft - 1));
+			//					_pair.first = true;
+			//				}
+			//			}
+			//		}
+			//		_pair.second = strbuffer;
+			//		_map[iCount++] = _pair;
+			//		iBegin = iPos + 1;
+			//	}
 
-				// 剩余部分.
-				if (iPos < (int)(strBody.size() - 1)) {
-					_map[iCount++] = std::make_pair(false, strBody.substr(iPos + 1, strBody.size() - iPos));
-				}
+			//	// 剩余部分.
+			//	if (iPos < (int)(strBody.size() - 1)) {
+			//		_map[iCount++] = std::make_pair(false, strBody.substr(iPos + 1, strBody.size() - iPos));
+			//	}
 
-				// Add内联资源.
-				for (auto& i : _vec) {
-					pMimeMessage->AddLinkedResource(i.c_str(), i.c_str());
-				}
+			//	// Add内联资源.
+			//	for (auto& i : _vec) {
+			//		pMimeMessage->AddLinkedResource(i.c_str(), i.c_str());
+			//	}
 
-				// 拼装Body.
-				strBody.clear();
-				for (auto& i : _map) {
-					if (i.second.first) {
-						int iIndex = i.second.second.find('"', 0);
-						if (iIndex != std::string::npos) {
-							i.second.second.insert(iIndex + 1, szCid);
-						}
-						strBody.append(i.second.second);
-					}
-					else {
-						strBody.append(i.second.second);
-					}
-				}
-				pMimeMessage->SetMessageBody(strBody.c_str(), 1);
-			}
+			//	// 拼装Body.
+			//	strBody.clear();
+			//	for (auto& i : _map) {
+			//		if (i.second.first) {
+			//			int iIndex = i.second.second.find('"', 0);
+			//			if (iIndex != std::string::npos) {
+			//				i.second.second.insert(iIndex + 1, szCid);
+			//			}
+			//			strBody.append(i.second.second);
+			//		}
+			//		else {
+			//			strBody.append(i.second.second);
+			//		}
+			//	}
+			//	//pMimeMessage->SetMessageBody(strBody.c_str(), 1);
+			//}
 		}
 	}
 

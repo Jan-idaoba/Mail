@@ -15,11 +15,9 @@ namespace libmailNS
 	{
 	}
 
-	/*@class
-	*******************************************************************
-	功	能 :	.
-	作	者:	zengzhaofa.
-	*******************************************************************/
+	//@func
+	//功	能:	.
+	//作	者:	zengzhaofa.
 	void CMimeMessage::Reset()
 	{
 		m_bhtml = false;
@@ -36,31 +34,17 @@ namespace libmailNS
 		m_vecResources.clear();
 	}
 
-	/*@class
-	*******************************************************************
-	功	能 :	.
-	作	者:	zengzhaofa.
-	*******************************************************************/
-	void CMimeMessage::Release()
-	{
-
-	}
-
-	/*@class
-	*******************************************************************
-	功	能 :	.
-	作	者:	zengzhaofa.
-	*******************************************************************/
+	//@func
+	//功	能:	.
+	//作	者:	zengzhaofa.
 	IMimeMessage* CMimeMessage::CreateMessageInstance()
 	{
 		return new CMimeMessage();
 	}
 
-	/*@class
-	*******************************************************************
-	功	能 :	.
-	作	者:	zengzhaofa.
-	*******************************************************************/
+	//@func
+	//功	能:	.
+	//作	者:	zengzhaofa.	
 	int CMimeMessage::AddRecipient(const char* Recipient, const char* alias)
 	{
 		auto iRet = -1;
@@ -77,21 +61,17 @@ namespace libmailNS
 		return iRet;
 	}
 
-	/*@class
-	*******************************************************************
-	功	能 :	.
-	作	者:	zengzhaofa.
-	*******************************************************************/
+	//@func
+	//功	能:	.
+	//作	者:	zengzhaofa.
 	int CMimeMessage::GetRecipientsCount() const
 	{
 		return m_vecRecipients.size();
 	}
 
-	/*@class
-	*******************************************************************
-	功	能 :	.
-	作	者:	zengzhaofa.
-	*******************************************************************/
+	//@func
+	//功	能:	.
+	//作	者:	zengzhaofa.
 	const char* CMimeMessage::GetRecipient(unsigned int nIndex, unsigned int nNameIndex) const
 	{
 		if (nIndex > 0 && nIndex <= m_vecRecipients.size()) {
@@ -105,11 +85,9 @@ namespace libmailNS
 		return "";
 	}
 
-	/*@class
-	*******************************************************************
-	功	能 :	.
-	作	者:	zengzhaofa.
-	*******************************************************************/
+	//@func
+	//功	能:	.
+	//作	者:	zengzhaofa.
 	int CMimeMessage::ClearAllRecipients()
 	{
 		int iCount = m_vecRecipients.size();
@@ -117,11 +95,9 @@ namespace libmailNS
 		return iCount;
 	}
 
-	/*@class
-	*******************************************************************
-	功	能 :	.
-	作	者:	zengzhaofa.
-	*******************************************************************/
+	//@func
+	//功	能:	.
+	//作	者:	zengzhaofa.
 	int CMimeMessage::AddCc(const char* CC, const char* alias)
 	{
 		auto iRet = -1;
@@ -138,21 +114,17 @@ namespace libmailNS
 		return iRet;
 	}
 
-	/*@class
-	*******************************************************************
-	功	能 :	.
-	作	者:	zengzhaofa.
-	*******************************************************************/
+	//@func
+	//功	能:	.
+	//作	者:	zengzhaofa.
 	int CMimeMessage::GetCcsCount() const
 	{
 		return m_vecCCs.size();
 	}
 
-	/*@class
-	*******************************************************************
-	功	能 :	.
-	作	者:	zengzhaofa.
-	*******************************************************************/
+	//@func
+	//功	能:	.
+	//作	者:	zengzhaofa.	
 	const char* CMimeMessage::GetCc(unsigned int nIndex, unsigned int nNameIndex) const
 	{
 		if (nIndex > 0 && nIndex <= m_vecCCs.size()) {
@@ -166,11 +138,9 @@ namespace libmailNS
 		return "";
 	}
 
-	/*@class
-	*******************************************************************
-	功	能 :	.
-	作	者:	zengzhaofa.
-	*******************************************************************/
+	//@func
+	//功	能:	.
+	//作	者:	zengzhaofa.	
 	int CMimeMessage::ClearAllCcs()
 	{
 		int iCount = m_vecCCs.size();
@@ -178,11 +148,9 @@ namespace libmailNS
 		return iCount;
 	}
 
-	/*@class
-	*******************************************************************
-	功	能 :	.
-	作	者:	zengzhaofa.
-	*******************************************************************/
+	//@func
+	//功	能:	.
+	//作	者:	zengzhaofa.
 	int CMimeMessage::AddBcc(const char* Bcc, const char* alias)
 	{
 		auto iRet = -1;
@@ -199,21 +167,17 @@ namespace libmailNS
 		return iRet;
 	}
 
-	/*@class
-	*******************************************************************
-	功	能 :	.
-	作	者:	zengzhaofa.
-	*******************************************************************/
+	//@func
+	//功	能:	.
+	//作	者:	zengzhaofa.
 	int CMimeMessage::GetBccsCount() const
 	{
 		return m_vecBccs.size();
 	}
 
-	/*@class
-	*******************************************************************
-	功	能 :	.
-	作	者:	zengzhaofa.
-	*******************************************************************/
+	//@func
+	//功	能:	.
+	//作	者:	zengzhaofa.
 	const char* CMimeMessage::GetBcc(unsigned int nIndex, unsigned int nNameIndex) const
 	{
 		if (nIndex > 0 && nIndex <= m_vecBccs.size()) {
@@ -227,11 +191,9 @@ namespace libmailNS
 		return "";
 	}
 
-	/*@class
-	*******************************************************************
-	功	能 :	.
-	作	者:	zengzhaofa.
-	*******************************************************************/
+	//@func
+	//功	能:	.
+	//作	者:	zengzhaofa.
 	int CMimeMessage::ClearAllBccs()
 	{
 		int iCount = m_vecBccs.size();
@@ -239,11 +201,11 @@ namespace libmailNS
 		return iCount;
 	}
 
-	/*@class
-	*******************************************************************
-	功	能 :	.
-	作	者:	zengzhaofa.
-	*******************************************************************/
+	//@func
+	//
+	//功	能:	.
+	//作	者:	zengzhaofa.
+	
 	int CMimeMessage::AddAttachment(const char* Attachment)
 	{
 		auto iRet = -1;
@@ -260,31 +222,25 @@ namespace libmailNS
 		return iRet;
 	}
 
-	/*@class
-	*******************************************************************
-	功	能 :	.
-	作	者:	zengzhaofa.
-	*******************************************************************/
+	//@func
+	//功	能:	.
+	//作	者:	zengzhaofa.
 	int CMimeMessage::GetAttachmentsCount() const
 	{
 		return m_vecAttachments.size();
 	}
 
-	/*@class
-	*******************************************************************
-	功	能 :	.
-	作	者:	zengzhaofa.
-	*******************************************************************/
+	//@func
+	//功	能:	.
+	//作	者:	zengzhaofa.
 	const char* CMimeMessage::GetAttachment(unsigned int nIndex) const
 	{
 		return nIndex > 0 && nIndex <= m_vecAttachments.size() ? m_vecAttachments[nIndex - 1].c_str() : "";
 	}
 
-	/*@class
-	*******************************************************************
-	功	能 :	.
-	作	者:	zengzhaofa.
-	*******************************************************************/
+	//@func
+	//功	能:	.
+	//作	者:	zengzhaofa.
 	int CMimeMessage::ClearAllAttachments()
 	{
 		int iCount = m_vecAttachments.size();
@@ -292,11 +248,9 @@ namespace libmailNS
 		return iCount;
 	}
 
-	/*@class
-	*******************************************************************
-	功	能 :	.
-	作	者:	zengzhaofa.
-	*******************************************************************/
+	//@func
+	//功	能:	.
+	//作	者:	zengzhaofa.
 	int CMimeMessage::AddLinkedResource(const char* ResourcePath, const char* ContantID)
 	{
 		auto iRet = -1;
@@ -320,41 +274,33 @@ namespace libmailNS
 		return iRet;
 	}
 
-	/*@class
-	*******************************************************************
-	功	能 :	.
-	作	者:	zengzhaofa.
-	*******************************************************************/
+	//@func
+	//功	能:	.
+	//作	者:	zengzhaofa.
 	int CMimeMessage::GetLinkedResourcesCount() const
 	{
 		return m_vecResources.size();
 	}
 
-	/*@class
-	*******************************************************************
-	功	能 :	.
-	作	者:	zengzhaofa.
-	*******************************************************************/
+	//@func
+	//功	能:	.
+	//作	者:	zengzhaofa.
 	const char* CMimeMessage::GetLinkedResourceFileName(unsigned int nIndex) const
 	{
 		return nIndex > 0 && nIndex <= m_vecResources.size() ? get<0>(m_vecResources[nIndex - 1]).c_str() : "";
 	}
 
-	/*@class
-	*******************************************************************
-	功	能 :	.
-	作	者:	zengzhaofa.
-	*******************************************************************/
+	//@func
+	//功	能:	.
+	//作	者:	zengzhaofa.
 	const char* CMimeMessage::GetLinkedResourceContantID(unsigned int nIndex) const
 	{
 		return nIndex > 0 && nIndex <= m_vecResources.size() ? get<1>(m_vecResources[nIndex - 1]).c_str() : "";
 	}
 
-	/*@class
-	*******************************************************************
-	功	能 :	.
-	作	者:	zengzhaofa.
-	*******************************************************************/
+	//@func
+	//功	能:	.
+	//作	者:	zengzhaofa.
 	int CMimeMessage::ClearAllLinkedResources()
 	{
 		int iCount = m_vecResources.size();
@@ -362,11 +308,9 @@ namespace libmailNS
 		return iCount;
 	}
 
-	/*@class
-	*******************************************************************
-	功	能 :	.
-	作	者:	zengzhaofa.
-	*******************************************************************/
+	//@func
+	//功	能:	.
+	//作	者:	zengzhaofa.
 	int CMimeMessage::SetSender(const char* Sender, const char* alias)
 	{
 		auto iRet = -1;
@@ -380,11 +324,9 @@ namespace libmailNS
 		return iRet;
 	}
 
-	/*@class
-	*******************************************************************
-	功	能 :	.
-	作	者:	zengzhaofa.
-	*******************************************************************/
+	//@func
+	//功	能:	.
+	//作	者:	zengzhaofa.
 	const char* CMimeMessage::GetSender(unsigned int nIndex) const
 	{
 		if (nIndex) {
@@ -396,81 +338,65 @@ namespace libmailNS
 		return "";
 	}
 
-	/*@class
-	*******************************************************************
-	功	能 :	.
-	作	者:	zengzhaofa.
-	*******************************************************************/
+	//@func
+	//功	能:	.
+	//作	者:	zengzhaofa.
 	void CMimeMessage::ClearSender()
 	{
 		m_pairSender = std::make_pair("", "");
 	}
 
-	/*@class
-	*******************************************************************
-	功	能 :	.
-	作	者:	zengzhaofa.
-	*******************************************************************/
+	//@func
+	//功	能:	.
+	//作	者:	zengzhaofa.
 	void CMimeMessage::SetMessageBodyFormat(bool bHTML)
 	{
 		m_bhtml = bHTML;
 	}
 
-	/*@class
-	*******************************************************************
-	功	能 :	.
-	作	者:	zengzhaofa.
-	*******************************************************************/
+	//@func
+	//功	能 :	.
+	//作	者:	zengzhaofa.
 	bool CMimeMessage::GetMessageBodyFormat() const
 	{
 		return m_bhtml;
 	}
 
-	/*@class
-	*******************************************************************
-	功	能 :	.
-	作	者:	zengzhaofa.
-	*******************************************************************/
+	//@func
+	//功	能:	.
+	//作	者:	zengzhaofa.
 	void CMimeMessage::SetPriority(unsigned int nPriority)
 	{
 		m_iPriority = nPriority;
 	}
 
-	/*@class
-	*******************************************************************
-	功	能 :	.
-	作	者:	zengzhaofa.
-	*******************************************************************/
+	//@func
+	//功	能:	.
+	//作	者:	zengzhaofa.
 	int CMimeMessage::GetPriority() const
 	{
 		return m_iPriority;
 	}
 
-	/*@class
-	*******************************************************************
-	功	能 :	.
-	作	者:	zengzhaofa.
-	*******************************************************************/
+	//@func
+	//功	能:	.
+	//作	者:	zengzhaofa.
 	void CMimeMessage::SetSubject(const char* Subject)
 	{
 		m_strSubject = Subject;
 	}
 
-	/*@class
-	*******************************************************************
-	功	能 :	.
-	作	者:	zengzhaofa.
-	*******************************************************************/
+	//@func
+	//功	能:	.
+	//作	者:	zengzhaofa.
 	const char* CMimeMessage::GetSubject() const
 	{
 		return m_strSubject.c_str();
 	}
 
-	/*@class
-	*******************************************************************
-	功	能 :	.
-	作	者:	zengzhaofa.
-	*******************************************************************/
+	//@func
+	//功	能:	.
+	//作	者:	zengzhaofa.
 	void CMimeMessage::SetTransferEncoding(unsigned int nEncodeType)
 	{
 		if (nEncodeType == 0) {
@@ -481,11 +407,9 @@ namespace libmailNS
 		}
 	}
 
-	/*@class
-	*******************************************************************
-	功	能 :	.
-	作	者:	zengzhaofa.
-	*******************************************************************/
+	//@func
+	//功	能:	.
+	//作	者:	zengzhaofa.
 	int CMimeMessage::GetTransferEncoding() const
 	{
 		if (m_enumEncodingType == EnCodingType::eASCII) {
@@ -497,26 +421,9 @@ namespace libmailNS
 		return 0;
 	}
 
-	/*@class
-	*******************************************************************
-	功	能 :	.
-	作	者:	zengzhaofa.
-	*******************************************************************/
-	void CMimeMessage::SetMessageBody(const char* Body, unsigned int nBodyType)
-	{
-		if (nBodyType) {
-			m_strPlainTextBody = Body;
-		}
-		else {
-			m_strHTMLBody = Body;
-		}
-	}
-
-	/*@class
-	*******************************************************************
-	功	能 :	.
-	作	者:	zengzhaofa.
-	*******************************************************************/
+	//@func
+	//功	能:	.
+	//作	者:	zengzhaofa.
 	void CMimeMessage::SetMessageBodyFromFile(const char* FileName, int iTextType)
 	{
 		unsigned char* pData = nullptr;
@@ -545,18 +452,36 @@ namespace libmailNS
 		//}
 	}
 
-	/*@class
-	*******************************************************************
-	功	能 :	.
-	作	者:	zengzhaofa.
-	*******************************************************************/
-	const char* CMimeMessage::GetMessageBody(int iTextType) const
+	//@func
+	//功	能:	.
+	//作	者:	zengzhaofa.
+	void CMimeMessage::SetMessageHtmlBody(const char* Body)
 	{
-		if (iTextType) {
-			return m_strHTMLBody.c_str();
-		}
-		else {
-			return m_strPlainTextBody.c_str();
-		}
+		m_strHTMLBody = Body;
+	}
+
+	//@func
+	//功	能:	.
+	//作	者:	zengzhaofa.
+	const char* CMimeMessage::GetMessageHtmlBody() const
+	{
+
+		return m_strHTMLBody.c_str();
+	}
+
+	//@func
+	//功	能:	.
+	//作	者:	zengzhaofa.
+	void CMimeMessage::SetMessagePlainBody(const char* Body)
+	{
+		m_strPlainTextBody = Body;
+	}
+
+	//@func
+	//功	能:	.
+	//作	者:	zengzhaofa.
+	const char* CMimeMessage::GetMessagePlainBody() const
+	{
+		return m_strPlainTextBody.c_str();
 	}
 }
